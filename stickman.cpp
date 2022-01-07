@@ -55,6 +55,7 @@ Vec2 to2d (Vec3 point3d) {
 	    point.x = point3d.x * 500 / z;
 	    point.y = point3d.y * 500 / z;
 	    
+	    point += center;
 	    return (point);
 }
 	    
@@ -109,7 +110,6 @@ void add_torso(void) {
 
 void draw_head( Vec2 head) {
  
-    head += center;
     screen.circle(head,15);
     screen.pen = black; 
     screen.circle(head,14);
@@ -118,7 +118,7 @@ void draw_head( Vec2 head) {
 void draw_stickman(void) {
 
     for (auto bone:bones) 
-	    screen.line(to2d(bone.joint1) + center, to2d(bone.joint2) + center);
+	    screen.line(to2d(bone.joint1), to2d(bone.joint2));
 }
 
 void draw_ground(void) {
@@ -135,7 +135,7 @@ static float dustx;
 		
 		dust = rotate3d(dust,rot3d);
 		dust.y -= 100;
-		screen.pixel(to2d(dust) + center);
+		screen.pixel(to2d(dust));
 	    }
 
 }
