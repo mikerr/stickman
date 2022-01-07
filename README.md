@@ -1,3 +1,3 @@
 # stickman
 Line drawn 3D stickman game/demo 
-![](stickman.gif)
+![](stickman3d.gif)
